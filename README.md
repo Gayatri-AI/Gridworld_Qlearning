@@ -10,9 +10,9 @@ Technical Report: Q-Learning in Gridworld Environments
  in the accompanying document.
 ## Overview
  This experiment consists of two main parts, each with its own gridworld:
- • Part 1: A 5x5 grid with a positive goal (reward = 5), a negative terminal state (reward =-5), and
+ ### • Part 1: A 5x5 grid with a positive goal (reward = 5), a negative terminal state (reward =-5), and
  some walls. The agent starts at (0,0).
- • Part 2: A larger, 5x11 grid where a tunnel joins two 5x5 grids with a positive goal (reward = 5), a
+ ### • Part 2: A larger, 5x11 grid where a tunnel joins two 5x5 grids with a positive goal (reward = 5), a
  negative terminal state (reward =-5), and more walls. The agent again starts at (0,0).
  In both parts, the agent can move North, South, East, or West. It gets a penalty (-1) if it tries to move
  outside the grid or into a wall. Part 2 uses a different method (softmax) for action selection compared to
@@ -55,7 +55,8 @@ Technical Report: Q-Learning in Gridworld Environments
  Higher gamma (0.5, 0.9) leads to more cautious behavior. The agent avoids risky shortcuts and prefers paths
  that are longer but safer, as seen in the policy maps. The value maps show higher values spreading further
  from the goal, indicating the agent is planning ahead.
- 3.3 Question 3: Steps to Goal vs. Epsilon
+ 
+### Steps to Goal vs. Epsilon
  For gamma = 0.9, the agent was trained with different epsilon values (0.1, 0.3, 0.5). The plot shows the
  average number of steps the agent took to reach the goal over the episodes.
  
@@ -112,16 +113,17 @@ Technical Report: Q-Learning in Gridworld Environments
 
 ## Inference and Conclusion
  Looking at all the plots and results:
- • Gamma(Future Reward Importance): Higher gamma makes the agent plan ahead and take safer,
+ ### • Gamma(Future Reward Importance): Higher gamma makes the agent plan ahead and take safer,
  sometimes longer paths. Lower gamma makes it focus on immediate rewards.
- • Epsilon/Beta (Exploration): Lower values make the agent stick to what it knows, learning quickly
+ ### • Epsilon/Beta (Exploration): Lower values make the agent stick to what it knows, learning quickly
  but possibly missing better paths. Higher values make it explore more, which can help find better paths
  but may slow down learning.
- • Environment Complexity: In the larger, more complex grid (Part 2), the agent needs more training
+ ### • Environment Complexity: In the larger, more complex grid (Part 2), the agent needs more training
  to learn good strategies, but the overall patterns are similar to the smaller grid.
- • Exploration Strategy: Usingsoftmax (Part 2) gives smoother exploration compared to epsilon-greedy
+ ### • Exploration Strategy: Usingsoftmax (Part 2) gives smoother exploration compared to epsilon-greedy
  (Part 1), but both methods can find good policies if tuned well.
- 6 Final Thoughts
+ 
+ ## Final Thoughts
  This assignment demonstrates how reinforcement learning agents can learn to navigate complex environments
  by balancing exploration and exploitation. The choice of parameters like gamma and exploration strategy
  (epsilon or beta) has a big impact on how well and how quickly the agent learns. The plots help visualize
