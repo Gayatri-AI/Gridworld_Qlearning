@@ -30,7 +30,10 @@ Technical Report: Q-Learning in Gridworld Environments
  values mean the agent expects more reward from that position.
 
 ### Plots and Interpretation
+
+![image](https://github.com/user-attachments/assets/6ba22f3a-2e8e-4c42-ba94-5deb3d125e62)
 Figure 1: Policy Map, Gamma=0.1, Epsilon=0.1
+
 Figure 2: Value Map, Gamma=0.1, Epsilon=0.1
 Figure 3: Policy Map, Gamma=0.5, Epsilon=0.1
 Figure 4: Value Map, Gamma=0.5, Epsilon=0.1
