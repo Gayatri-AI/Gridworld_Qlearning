@@ -10,10 +10,8 @@ Technical Report: Q-Learning in Gridworld Environments
  in the accompanying document.
 ## Overview
  This experiment consists of two main parts, each with its own gridworld:
- ### • Part 1: A 5x5 grid with a positive goal (reward = 5), a negative terminal state (reward =-5), and
- some walls. The agent starts at (0,0).
- ### • Part 2: A larger, 5x11 grid where a tunnel joins two 5x5 grids with a positive goal (reward = 5), a
- negative terminal state (reward =-5), and more walls. The agent again starts at (0,0).
+ ### • Part 1: A 5x5 grid with a positive goal (reward = 5), a negative terminal state (reward =-5), and some walls. The agent starts at (0,0).
+ ### • Part 2: A larger, 5x11 grid where a tunnel joins two 5x5 grids with a positive goal (reward = 5), a negative terminal state (reward =-5), and more walls. The agent again starts at (0,0).
  In both parts, the agent can move North, South, East, or West. It gets a penalty (-1) if it tries to move
  outside the grid or into a wall. Part 2 uses a different method (softmax) for action selection compared to
  Part 1 (epsilon-greedy).
@@ -32,10 +30,15 @@ Technical Report: Q-Learning in Gridworld Environments
 ### Plots and Interpretation
 
 ![image](https://github.com/user-attachments/assets/6ba22f3a-2e8e-4c42-ba94-5deb3d125e62)
+
 ![image](https://github.com/user-attachments/assets/f3379679-0352-4f2e-814f-6bdeab63a532)
+
 ![image](https://github.com/user-attachments/assets/1e2960b7-134f-4b58-9d55-029a72d739e4)
+
 ![image](https://github.com/user-attachments/assets/6d8bead7-0cba-40dc-a416-afe2bbf0d35c)
+
 ![image](https://github.com/user-attachments/assets/590055a9-317c-4b74-8e11-1a5bf89972f2)
+
 ![image](https://github.com/user-attachments/assets/45108540-8d9d-46db-bfa4-829493ab89a7)
 
 
@@ -78,10 +81,15 @@ Technical Report: Q-Learning in Gridworld Environments
  (beta) set to 0.1.
 
 ![image](https://github.com/user-attachments/assets/9aa133e5-9a69-4b01-80e8-9fe2e4f5944c)
+
 ![image](https://github.com/user-attachments/assets/f60ca73d-56cf-4fe4-aff7-515c35482f84)
+
 ![image](https://github.com/user-attachments/assets/0d40a728-1800-45ad-ad71-666ba98ace55)
+
 ![image](https://github.com/user-attachments/assets/8b5eb35d-4821-42a2-b837-78aad2bb5f05)
+
 ![image](https://github.com/user-attachments/assets/64726423-308a-4387-8b9e-3959af66a655)
+
 ![image](https://github.com/user-attachments/assets/ad444dff-9132-4a90-95de-8166d95c2f15)
 
 
@@ -113,15 +121,15 @@ Technical Report: Q-Learning in Gridworld Environments
 
 ## Inference and Conclusion
  Looking at all the plots and results:
- ### • Gamma(Future Reward Importance): Higher gamma makes the agent plan ahead and take safer,
- sometimes longer paths. Lower gamma makes it focus on immediate rewards.
- ### • Epsilon/Beta (Exploration): Lower values make the agent stick to what it knows, learning quickly
- but possibly missing better paths. Higher values make it explore more, which can help find better paths
+ ### • Gamma(Future Reward Importance): 
+ Higher gamma makes the agent plan ahead and take safer, sometimes longer paths. Lower gamma makes it focus on immediate rewards.
+ ### • Epsilon/Beta (Exploration):
+ Lower values make the agent stick to what it knows, learning quickly but possibly missing better paths. Higher values make it explore more, which can help find better paths
  but may slow down learning.
- ### • Environment Complexity: In the larger, more complex grid (Part 2), the agent needs more training
- to learn good strategies, but the overall patterns are similar to the smaller grid.
- ### • Exploration Strategy: Usingsoftmax (Part 2) gives smoother exploration compared to epsilon-greedy
- (Part 1), but both methods can find good policies if tuned well.
+ ### • Environment Complexity: 
+ In the larger, more complex grid (Part 2), the agent needs more training to learn good strategies, but the overall patterns are similar to the smaller grid.
+ ### • Exploration Strategy: 
+ Usingsoftmax (Part 2) gives smoother exploration compared to epsilon-greedy (Part 1), but both methods can find good policies if tuned well.
  
  ## Final Thoughts
  This assignment demonstrates how reinforcement learning agents can learn to navigate complex environments
