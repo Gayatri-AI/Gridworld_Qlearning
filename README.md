@@ -32,13 +32,12 @@ Technical Report: Q-Learning in Gridworld Environments
 ### Plots and Interpretation
 
 ![image](https://github.com/user-attachments/assets/6ba22f3a-2e8e-4c42-ba94-5deb3d125e62)
-Figure 1: Policy Map, Gamma=0.1, Epsilon=0.1
+![image](https://github.com/user-attachments/assets/f3379679-0352-4f2e-814f-6bdeab63a532)
+![image](https://github.com/user-attachments/assets/1e2960b7-134f-4b58-9d55-029a72d739e4)
+![image](https://github.com/user-attachments/assets/6d8bead7-0cba-40dc-a416-afe2bbf0d35c)
+![image](https://github.com/user-attachments/assets/590055a9-317c-4b74-8e11-1a5bf89972f2)
+![image](https://github.com/user-attachments/assets/45108540-8d9d-46db-bfa4-829493ab89a7)
 
-Figure 2: Value Map, Gamma=0.1, Epsilon=0.1
-Figure 3: Policy Map, Gamma=0.5, Epsilon=0.1
-Figure 4: Value Map, Gamma=0.5, Epsilon=0.1
-Figure 5: Policy Map, Gamma=0.9, Epsilon=0.1
-Figure 6: Value Map, Gamma=0.9, Epsilon=0.1
 
 ### Comment on Results
  For gamma = 0.1, the agent mostly cares about immediate rewards. The value map is high only near the
@@ -60,7 +59,7 @@ Figure 6: Value Map, Gamma=0.9, Epsilon=0.1
  For gamma = 0.9, the agent was trained with different epsilon values (0.1, 0.3, 0.5). The plot shows the
  average number of steps the agent took to reach the goal over the episodes.
  
-Figure 7: Steps to Goal vs. Episode for Different Epsilon Values (Gamma=0.9)
+![image](https://github.com/user-attachments/assets/b48762a7-358b-493e-96ea-851b06bf2270)
 
 ### Comment on Results
  When epsilon is low (0.1), the agent mostly follows its learned policy and quickly learns a good path. The
@@ -77,12 +76,13 @@ Figure 7: Steps to Goal vs. Episode for Different Epsilon Values (Gamma=0.9)
  Again, policy and value maps were generated for gamma = 0.1, 0.5, and 0.9, with the softmax parameter
  (beta) set to 0.1.
 
-Figure 8: Policy Map, Gamma=0.1, Beta=0.1
-Figure 9: Value Map, Gamma=0.1, Beta=0.1
-Figure 10: Policy Map, Gamma=0.5, Beta=0.1
-Figure 11: Value Map, Gamma=0.5, Beta=0.1
-Figure 12: Policy Map, Gamma=0.9, Beta=0.1
-Figure 13: Value Map, Gamma=0.9, Beta=0.1
+![image](https://github.com/user-attachments/assets/9aa133e5-9a69-4b01-80e8-9fe2e4f5944c)
+![image](https://github.com/user-attachments/assets/f60ca73d-56cf-4fe4-aff7-515c35482f84)
+![image](https://github.com/user-attachments/assets/0d40a728-1800-45ad-ad71-666ba98ace55)
+![image](https://github.com/user-attachments/assets/8b5eb35d-4821-42a2-b837-78aad2bb5f05)
+![image](https://github.com/user-attachments/assets/64726423-308a-4387-8b9e-3959af66a655)
+![image](https://github.com/user-attachments/assets/ad444dff-9132-4a90-95de-8166d95c2f15)
+
 
 ### Comment on Results
  With softmax, the agent explores more smoothly. The value maps show the agent learns to avoid the negative
@@ -102,15 +102,15 @@ Figure 13: Value Map, Gamma=0.9, Beta=0.1
 ### Steps to Goal vs. Beta
  For gamma = 0.9, the agent was trained with different beta values (0.1, 0.3, 0.5). The plot shows the average
  number of steps to reach the goal over the episodes.
- Figure 14: Steps to Goal vs. Episode for Different Beta Values (Gamma=0.9)
- 
+![image](https://github.com/user-attachments/assets/ea41d270-5da7-4859-82a8-0adb089b4053)
+
 ### Comment on Results
  Lower beta (0.1) means the agent tries more random actions, which can help it discover new paths but also
  means it sometimes takes longer to reach the goal. Higher beta (0.5) means the agent sticks more to its best
  guess, so it learns faster but might get stuck in suboptimal paths if it doesn’t explore enough. A moderate
  beta (like 0.3) often gives a good balance between exploration and sticking to what works.
 
-### Inference and Conclusion
+## Inference and Conclusion
  Looking at all the plots and results:
  • Gamma(Future Reward Importance): Higher gamma makes the agent plan ahead and take safer,
  sometimes longer paths. Lower gamma makes it focus on immediate rewards.
