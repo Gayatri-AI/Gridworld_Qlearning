@@ -10,8 +10,10 @@ Technical Report: Q-Learning in Gridworld Environments
  in the accompanying document.
 ## Overview
  This experiment consists of two main parts, each with its own gridworld:
- ### • Part 1: A 5x5 grid with a positive goal (reward = 5), a negative terminal state (reward =-5), and some walls. The agent starts at (0,0).
- ### • Part 2: A larger, 5x11 grid where a tunnel joins two 5x5 grids with a positive goal (reward = 5), a negative terminal state (reward =-5), and more walls. The agent again starts at (0,0).
+ ### • Part 1: 
+ A 5x5 grid with a positive goal (reward = 5), a negative terminal state (reward =-5), and some walls. The agent starts at (0,0).
+ ### • Part 2: 
+ A larger, 5x11 grid where a tunnel joins two 5x5 grids with a positive goal (reward = 5), a negative terminal state (reward =-5), and more walls. The agent again starts at (0,0).
  In both parts, the agent can move North, South, East, or West. It gets a penalty (-1) if it tries to move
  outside the grid or into a wall. Part 2 uses a different method (softmax) for action selection compared to
  Part 1 (epsilon-greedy).
