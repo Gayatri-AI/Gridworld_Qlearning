@@ -45,11 +45,11 @@ Figure 6: Value Map, Gamma=0.9, Epsilon=0.1
  agent learns longer-term strategies, sometimes taking longer but safer paths to avoid walls and the negative
  terminal state.
  
- ###Gamma Variation
+### Gamma Variation
  Each gamma value (0.1, 0.5, 0.9) was tested with epsilon (exploration rate) fixed at 0.1. The above plots
  show how the agent’s strategy changes with gamma.
  
- ###Comment on Results
+### Comment on Results
  Higher gamma (0.5, 0.9) leads to more cautious behavior. The agent avoids risky shortcuts and prefers paths
  that are longer but safer, as seen in the policy maps. The value maps show higher values spreading further
  from the goal, indicating the agent is planning ahead.
@@ -59,15 +59,15 @@ Figure 6: Value Map, Gamma=0.9, Epsilon=0.1
  
 Figure 7: Steps to Goal vs. Episode for Different Epsilon Values (Gamma=0.9)
 
- ###Comment on Results
+### Comment on Results
  When epsilon is low (0.1), the agent mostly follows its learned policy and quickly learns a good path. The
  number of steps to the goal drops fast and stabilizes.
  When epsilon is higher (0.3 or 0.5), the agent explores more. This can help it find better paths, but early
  in training, it sometimes takes longer to reach the goal. Over time, all settings improve, but lower epsilon
  leads to faster, more stable learning.
  
- ## Part 2: Results and Analysis
- ###Policy and Value Function Plots
+## Part 2: Results and Analysis
+### Policy and Value Function Plots
  The agent was trained for 200,000 episodes on a larger, more complex grid. Instead of epsilon-greedy, it used
  a softmax function to pick actions, which means it picks actions based on how good it thinks they are, but
  still sometimes tries less likely options.
@@ -81,34 +81,33 @@ Figure 11: Value Map, Gamma=0.5, Beta=0.1
 Figure 12: Policy Map, Gamma=0.9, Beta=0.1
 Figure 13: Value Map, Gamma=0.9, Beta=0.1
 
-###Comment on Results
+### Comment on Results
  With softmax, the agent explores more smoothly. The value maps show the agent learns to avoid the negative
  terminal state and head for the positive goal, even in the larger grid. The policy maps show arrows pointing
  toward the goal, avoiding walls and the negative state. Higher gamma leads to more cautious, long-term
  strategies, similar to Part 1.
 
-## Gamma Variation with Softmax
+### Gamma Variation with Softmax
  As before, higher gamma means the agent cares more about future rewards. The plots show that with higher
  gamma, the agent learns to take longer but safer paths, avoiding risks.
  
- ##Comment on Results
+### Comment on Results
  The agent’s strategy becomes more cautious as gamma increases, similar to Part 1, but now in a more
  complex environment. The softmax exploration helps the agent find good paths without getting stuck in
  local optima. 
  
- ##Steps to Goal vs. Beta
+### Steps to Goal vs. Beta
  For gamma = 0.9, the agent was trained with different beta values (0.1, 0.3, 0.5). The plot shows the average
  number of steps to reach the goal over the episodes.
  Figure 14: Steps to Goal vs. Episode for Different Beta Values (Gamma=0.9)
  
- ##Comment on Results
+### Comment on Results
  Lower beta (0.1) means the agent tries more random actions, which can help it discover new paths but also
  means it sometimes takes longer to reach the goal. Higher beta (0.5) means the agent sticks more to its best
  guess, so it learns faster but might get stuck in suboptimal paths if it doesn’t explore enough. A moderate
  beta (like 0.3) often gives a good balance between exploration and sticking to what works.
 
- 
-##Inference and Conclusion
+### Inference and Conclusion
  Looking at all the plots and results:
  • Gamma(Future Reward Importance): Higher gamma makes the agent plan ahead and take safer,
  sometimes longer paths. Lower gamma makes it focus on immediate rewards.
